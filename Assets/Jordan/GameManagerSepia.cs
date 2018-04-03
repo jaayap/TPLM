@@ -9,7 +9,9 @@ public class GameManagerSepia : MonoBehaviour {
     public enum State
     {
         unAugmented,
-        augmented
+        augmented,
+        endGame
+
     }
 
 
@@ -52,6 +54,16 @@ public class GameManagerSepia : MonoBehaviour {
         {
 
             tutoText.text = "Nous avons modifié votre ouïes. Maintenant vous pouvez entendre les couleurs. Le bleu correspond au son de l'eau, le vert à celui des feuilles et le rouge à celui du feu.";
+            if (red == true && green == true && blue == true)
+            {
+                Invoke("ChangeStateToEndGame", 3f);
+            }
+        }
+
+        else if(state == State.endGame)
+        {
+            
+            tutoText.text = "Félicitation! \n Vous avez réussi l'exercice!";
         }
 
 
@@ -75,6 +87,11 @@ public class GameManagerSepia : MonoBehaviour {
         red = false;
         green = false;
         blue = false;
+    }
+
+    void ChangeStateToEndGame()
+    {
+        state = State.endGame;
     }
 
     IEnumerator StartTuto()

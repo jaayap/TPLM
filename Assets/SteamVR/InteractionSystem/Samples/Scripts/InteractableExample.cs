@@ -13,9 +13,9 @@ namespace Valve.VR.InteractionSystem
 	[RequireComponent( typeof( Interactable ) )]
 	public class InteractableExample : MonoBehaviour
 	{
-		private TextMesh textMesh;
-		private Vector3 oldPosition;
-		private Quaternion oldRotation;
+		//private TextMesh textMesh;
+		//private Vector3 oldPosition;
+		//private Quaternion oldRotation;
 
 		private float attachTime;
 
@@ -24,8 +24,8 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		void Awake()
 		{
-			textMesh = GetComponentInChildren<TextMesh>();
-			textMesh.text = "No Hand Hovering";
+			//textMesh = GetComponentInChildren<TextMesh>();
+			//textMesh.text = "No Hand Hovering";
 		}
 
 
@@ -34,7 +34,7 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		private void OnHandHoverBegin( Hand hand )
 		{
-			textMesh.text = "Hovering hand: " + hand.name;
+			//textMesh.text = "Hovering hand: " + hand.name;
 		}
 
 
@@ -43,7 +43,7 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		private void OnHandHoverEnd( Hand hand )
 		{
-			textMesh.text = "No Hand Hovering";
+			//textMesh.text = "No Hand Hovering";
 		}
 
 
@@ -57,8 +57,8 @@ namespace Valve.VR.InteractionSystem
 				if ( hand.currentAttachedObject != gameObject )
 				{
 					// Save our position/rotation so that we can restore it when we detach
-					oldPosition = transform.position;
-					oldRotation = transform.rotation;
+					//oldPosition = transform.position;
+					//oldRotation = transform.rotation;
 
 					// Call this to continue receiving HandHoverUpdate messages,
 					// and prevent the hand from hovering over anything else
@@ -76,8 +76,8 @@ namespace Valve.VR.InteractionSystem
 					hand.HoverUnlock( GetComponent<Interactable>() );
 
 					// Restore position/rotation
-					transform.position = oldPosition;
-					transform.rotation = oldRotation;
+					//transform.position = oldPosition;
+					//transform.rotation = oldRotation;
 				}
 			}
 		}
@@ -88,7 +88,7 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		private void OnAttachedToHand( Hand hand )
 		{
-			textMesh.text = "Attached to hand: " + hand.name;
+			//textMesh.text = "Attached to hand: " + hand.name;
 			attachTime = Time.time;
 		}
 
@@ -98,7 +98,7 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		private void OnDetachedFromHand( Hand hand )
 		{
-			textMesh.text = "Detached from hand: " + hand.name;
+			//textMesh.text = "Detached from hand: " + hand.name;
 		}
 
 
@@ -107,7 +107,7 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		private void HandAttachedUpdate( Hand hand )
 		{
-			textMesh.text = "Attached to hand: " + hand.name + "\nAttached time: " + ( Time.time - attachTime ).ToString( "F2" );
+			//textMesh.text = "Attached to hand: " + hand.name + "\nAttached time: " + ( Time.time - attachTime ).ToString( "F2" );
 		}
 
 
