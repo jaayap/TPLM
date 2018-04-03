@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Manette : MonoBehaviour {
+public class Baguette : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {

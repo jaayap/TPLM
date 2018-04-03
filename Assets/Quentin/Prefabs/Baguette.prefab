@@ -21,7 +21,9 @@ GameObject:
   - component: {fileID: 4518102951761864}
   - component: {fileID: 33991314062808966}
   - component: {fileID: 23286771987862902}
-  - component: {fileID: 95586870515971966}
+  - component: {fileID: 136082283628436556}
+  - component: {fileID: 114748891820450554}
+  - component: {fileID: 54632007887606374}
   m_Layer: 0
   m_Name: Baguette
   m_TagString: Untagged
@@ -36,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1033590961054140}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.0001999999, y: 0, z: 0}
+  m_LocalPosition: {x: 0.0001999999, y: 0.09, z: -0}
   m_LocalScale: {x: 0.089790806, y: 0.089790806, z: 0.089790806}
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,20 +85,42 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1033590961054140}
   m_Mesh: {fileID: 4300000, guid: e25e842424f7ea444873bb1f483ee9cf, type: 3}
---- !u!95 &95586870515971966
-Animator:
-  serializedVersion: 3
+--- !u!54 &54632007887606374
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1033590961054140}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!114 &114748891820450554
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1033590961054140}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: e25e842424f7ea444873bb1f483ee9cf, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6013f5a45e60210409c9f432ccf7ea70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &136082283628436556
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1033590961054140}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.14
+  m_Height: 1.37
+  m_Direction: 2
+  m_Center: {x: -0.0029889194, y: 0.00007641316, z: 0.64885134}
