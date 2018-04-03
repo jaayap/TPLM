@@ -8,8 +8,8 @@ public class Manette : MonoBehaviour {
     {
         if (other.GetComponent<XyloBlock>())
         {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, transform.localScale.x);
-            other.GetComponent<XyloBlock>().ActivateColorSound(hitColliders[0].transform.position);
+            Vector3 position = other.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
+            other.GetComponent<XyloBlock>().ActivateColorSound(position);
         }
     }
 }
