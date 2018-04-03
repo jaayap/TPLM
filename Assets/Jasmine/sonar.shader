@@ -67,7 +67,9 @@
 						float diff = 1 - (_pulses[i] - dist) / (widtharray[i]);
 					//	pulsecol = lerp(fixed4(1,0,0,1), fixed4(1,1,1,1), diff* .5);//pink
 					//	pulsecol *= diff;
-						pulsecol = lerp(fixed4(0,0,0,0), fixed4(1,1,1,1), diff* .5); //white
+						//pulsecol = lerp(fixed4(0,0,0,0), fixed4(1,1,1,1), diff* .5); //white
+						//pulsecol *= diff;
+						pulsecol = lerp(fixed4(0, 0, 0.1f, 0), fixed4(1, 1, 1,1), diff* .5); //blue 
 						pulsecol *= diff;
 					}
 				}
