@@ -11,26 +11,6 @@ public class XyloBlock : MonoBehaviour {
     {
         Debug.Log("touch");
         color = GetComponent<Renderer>().sharedMaterial.color;
-        ParticleSystem[] allPS = particleSound.GetComponentsInChildren<ParticleSystem>();
-        foreach (ParticleSystem itemPS in allPS)
-        {
-            //if(itemPS.colorOverLifetime.enabled == true)
-            //{
-            //    itemPS.colorOverLifetime.color = color;
-            //}
-            itemPS.startColor = color;
-            if (itemPS.GetComponent<Material>())
-            {
-                itemPS.GetComponent<Material>().color = color;
-            }
-        }
-        GameObject go = Instantiate(particleSound);
-        go.transform.position = position;
-        Light light = go.GetComponentInChildren<Light>();
-        if (light)
-        {
-            Destroy(light.gameObject, 6f); 
-        }
-        Destroy(go, 15f);
+        FindObjectOfType<MelodiePlaying>().AddColorTopartitionPlayed(color,position);
     }
 }
