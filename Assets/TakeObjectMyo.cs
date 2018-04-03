@@ -13,10 +13,7 @@ public class TakeObjectMyo : MonoBehaviour {
     // This object must have a ThalmicMyo script attached.
     public GameObject myo = null;
 
-    // Materials to change to when poses are made.
-    public Material waveInMaterial;
-    public Material waveOutMaterial;
-    public Material doubleTapMaterial;
+    
 
     // The pose from the last update. This is used to determine if the pose has changed
     // so that actions are only performed upon making them rather than every frame during
@@ -26,7 +23,7 @@ public class TakeObjectMyo : MonoBehaviour {
     // Update is called once per frame
     void OnTriggerStay(Collider other) {
 
-        if (other.name == "Myo")
+        if (other.tag == "SepiaCube")
         {
 
             // Access the ThalmicMyo component attached to the Myo game object.

@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: 4192c884c01e0a24e94e39753d870d2e
+timeCreated: 1522791502
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bathroom
+    100002: Bed_down
+    100004: Bed_up
+    100006: Book001
+    100008: Book002
+    100010: Book003
+    100012: Book004
+    100014: Chair
+    100016: Chair001
+    100018: Door001
+    100020: Elec
+    100022: Floor
+    100024: Foot_Table
+    100026: Glasses
+    100028: //RootNode
+    100030: Placard
+    100032: Plinth
+    100034: Plinth002
+    100036: Roof
+    100038: Table
+    100040: Toy_Blind
+    100042: Walls
+    100044: Window
+    400000: Bathroom
+    400002: Bed_down
+    400004: Bed_up
+    400006: Book001
+    400008: Book002
+    400010: Book003
+    400012: Book004
+    400014: Chair
+    400016: Chair001
+    400018: Door001
+    400020: Elec
+    400022: Floor
+    400024: Foot_Table
+    400026: Glasses
+    400028: //RootNode
+    400030: Placard
+    400032: Plinth
+    400034: Plinth002
+    400036: Roof
+    400038: Table
+    400040: Toy_Blind
+    400042: Walls
+    400044: Window
+    2100000: 'Material #47'
+    2300000: Bathroom
+    2300002: Bed_down
+    2300004: Bed_up
+    2300006: Book001
+    2300008: Book002
+    2300010: Book003
+    2300012: Book004
+    2300014: Chair
+    2300016: Chair001
+    2300018: Door001
+    2300020: Elec
+    2300022: Floor
+    2300024: Foot_Table
+    2300026: Glasses
+    2300028: Placard
+    2300030: Plinth
+    2300032: Plinth002
+    2300034: Roof
+    2300036: Table
+    2300038: Toy_Blind
+    2300040: Walls
+    2300042: Window
+    3300000: Bathroom
+    3300002: Bed_down
+    3300004: Bed_up
+    3300006: Book001
+    3300008: Book002
+    3300010: Book003
+    3300012: Book004
+    3300014: Chair
+    3300016: Chair001
+    3300018: Door001
+    3300020: Elec
+    3300022: Floor
+    3300024: Foot_Table
+    3300026: Glasses
+    3300028: Placard
+    3300030: Plinth
+    3300032: Plinth002
+    3300034: Roof
+    3300036: Table
+    3300038: Toy_Blind
+    3300040: Walls
+    3300042: Window
+    4300000: Walls
+    4300002: Bed_down
+    4300004: Bed_up
+    4300006: Elec
+    4300008: Foot_Table
+    4300010: Door001
+    4300012: Placard
+    4300014: Bathroom
+    4300016: Toy_Blind
+    4300018: Table
+    4300020: Chair
+    4300022: Chair001
+    4300024: Window
+    4300026: Glasses
+    4300028: Book001
+    4300030: Book002
+    4300032: Book003
+    4300034: Book004
+    4300036: Roof
+    4300038: Floor
+    4300040: Plinth
+    4300042: Plinth002
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -7,6 +7,7 @@ TagManager:
   - FxTemporaire
   - projectile
   - SepiaCube
+  - Hand
   layers:
   - Default
   - TransparentFX
