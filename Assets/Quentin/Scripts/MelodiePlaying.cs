@@ -41,7 +41,7 @@ public class MelodiePlaying : MonoBehaviour {
             }
             else
             {
-                CreateParticuleColored(colorPlayed, hitPosition, particleSound);
+                CreateParticuleColored(colorPlayed, hitPosition, particleTreeSound);
             }
 
             if (partitionPlayed.Count == partition01.Length)
@@ -50,7 +50,8 @@ public class MelodiePlaying : MonoBehaviour {
                 StopAllCoroutines();
                 partitionFinish = false;
                 nbPartitionToPlay++;
-                StartCoroutine(playMelody02());
+                Invoke("DisplayMelody", waitingTime);
+                StartCoroutine("playMelody02", (waitingTime*4));
             }
         }
         else if (nbPartitionToPlay == 2)
@@ -67,7 +68,7 @@ public class MelodiePlaying : MonoBehaviour {
             }
             else
             {
-                CreateParticuleColored(colorPlayed, hitPosition, particleSound);
+                CreateParticuleColored(colorPlayed, hitPosition, particleTreeSound);
             }
 
             if (partitionPlayed.Count == partition02.Length)
@@ -77,7 +78,8 @@ public class MelodiePlaying : MonoBehaviour {
                 partitionFinish = false;
                 nbPartitionToPlay++;
                 //StartCoroutine(playMelody03());
-                ReturnToMenu();
+                Invoke("DisplayMelody", waitingTime);
+                Invoke("ReturnToMenu",waitingTime*4);
             }
         }
         //else if (nbPartitionToPlay == 3)
@@ -134,15 +136,25 @@ public class MelodiePlaying : MonoBehaviour {
 
     }
 
+    void DisplayMelody()
+    {
+        GameObject parent = GameObject.Find("MelodyList");
+
+        for (int i = 0; i < partitionPlayed.Count; i++)
+        {
+            CreateParticuleColored(partitionPlayed[i], parent.transform.GetChild(i).position, particleSound);
+        }
+    }
+
     public void ReturnToMenu()
     {
-        //LoadMenu
+        //LoadSceneMenu
         Application.Quit();
     }
 
     bool isGood(Color colorPlayed, Color colorToPlay)
     {
-        Debug.Log(colorPlayed +" / " + colorToPlay);
+        //Debug.Log(colorPlayed +" / " + colorToPlay);
         if(colorPlayed == colorToPlay)
             return true;
         else
