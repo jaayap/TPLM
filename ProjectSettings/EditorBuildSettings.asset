@@ -8,3 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: fb078df6ca3aa26459d8342b66c63834
+  - enabled: 1
+    path: Assets/Jasmine/sceneBlind.unity
+    guid: 7b12b42669756c449aaf4ae6a4b0094c
+  - enabled: 1
+    path: Assets/Jordan/SceneDalto 1.unity
+    guid: d2cedb5fe2e89a242ab6cf2c87498faf
+  - enabled: 1
+    path: Assets/Quentin/Scenes/Colored_Sounds.unity
+    guid: 9addf9ad53c14484abd5e23e491ff8c5
