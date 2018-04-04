@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManagerSepia : MonoBehaviour {
 
@@ -66,6 +67,13 @@ public class GameManagerSepia : MonoBehaviour {
         else if(state == State.endGame)
         {
             tutoText.text = "Congratulation ! \n You have successfully completed the exercise !";// "Félicitation! \n Vous avez réussi l'exercice!";
+            
+            if(isActive == false)
+            {
+                isActive = true;
+                Invoke("ReturnLobby", 3f);
+            }
+            
         }
 
 
@@ -95,6 +103,12 @@ public class GameManagerSepia : MonoBehaviour {
     void ChangeStateToEndGame()
     {
         state = State.endGame;
+        isActive = false;
+    }
+    
+    void ReturnLobby()
+    {
+        SceneManager.LoadScene(0);
     }
 
     IEnumerator StartTuto()
