@@ -11,15 +11,7 @@ public class TeleportMyo : MonoBehaviour {
 
     public GameObject myo = null;
     private Pose _lastPose = Pose.Unknown;
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public FadeDash fd;
 
     private void OnTriggerStay(Collider other)
     {
@@ -33,7 +25,10 @@ public class TeleportMyo : MonoBehaviour {
                 if (thalmicMyo.pose == Pose.Fist)
                 {
                     thalmicMyo.Vibrate(VibrationType.Medium);
-
+                    //recuperez point de contact
+                    Vector3 positionTP = other.ClosestPointOnBounds(transform.position);
+                    //dash
+                    fd.DoDashWithTranslation(positionTP);
                 }
             }
         }
@@ -49,7 +44,6 @@ public class TeleportMyo : MonoBehaviour {
         {
             myo.Unlock(UnlockType.Timed);
         }
-
         myo.NotifyUserAction();
     }
 }
