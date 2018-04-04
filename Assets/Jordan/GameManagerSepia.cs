@@ -26,6 +26,8 @@ public class GameManagerSepia : MonoBehaviour {
     public bool green = false;
     public bool blue = false;
 
+    private bool isActive = false;
+
     // Use this for initialization
     void Start () {
 
@@ -43,8 +45,9 @@ public class GameManagerSepia : MonoBehaviour {
             
             // attendre les cubes
             //Passer  l'étape suivante
-            if(red == true && green == true && blue == true)
+            if(red == true && green == true && blue == true && isActive == false)
             {
+                isActive = true;
                 tutoText.text = "Vous avez mis chaque cube dans un emplacement mais vous n'avez aucun moyen d'être sûr de vos choix. Nous allons procédé a quelques modifications pour vous aider.";
                 Invoke("ChangeStateToAugmented", 10f);
             }
@@ -54,8 +57,9 @@ public class GameManagerSepia : MonoBehaviour {
         {
 
             tutoText.text = "Nous avons modifié votre ouïes. Maintenant vous pouvez entendre les couleurs. Le bleu correspond au son de l'eau, le vert à celui des feuilles et le rouge à celui du feu.";
-            if (red == true && green == true && blue == true)
+            if (red == true && green == true && blue == true && isActive == false)
             {
+                isActive = true;
                 Invoke("ChangeStateToEndGame", 3f);
             }
         }
@@ -87,6 +91,7 @@ public class GameManagerSepia : MonoBehaviour {
         red = false;
         green = false;
         blue = false;
+        isActive = false;
     }
 
     void ChangeStateToEndGame()

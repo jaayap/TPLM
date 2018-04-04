@@ -52,7 +52,7 @@ public class TakeObjectMyo : MonoBehaviour {
                 }
                 else if(thalmicMyo.pose == Pose.Rest)
                 {
-                    other.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                    other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
                     other.gameObject.transform.SetParent(null);
                 }
             
