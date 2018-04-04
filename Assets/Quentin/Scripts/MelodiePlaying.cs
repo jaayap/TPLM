@@ -17,6 +17,7 @@ public class MelodiePlaying : MonoBehaviour {
     public Transform positionToInstantiate;
 
     public int nbPartitionToPlay = 1;
+    public int indexToPlay = 0;
 
     private List<Color> partitionPlayed;
 
@@ -37,6 +38,7 @@ public class MelodiePlaying : MonoBehaviour {
 
             if (!isGood(colorPlayed, partition01[partitionPlayed.Count - 1])){
                 CreateParticuleColored(Color.white, hitPosition,particleTreeSound);
+                indexToPlay = 0;
                 partitionPlayed.Clear();
             }
             else
@@ -64,6 +66,7 @@ public class MelodiePlaying : MonoBehaviour {
             if (!isGood(colorPlayed, partition02[partitionPlayed.Count - 1]))
             {
                 CreateParticuleColored(Color.white, hitPosition, particleTreeSound);
+                indexToPlay = 0;
                 partitionPlayed.Clear();
             }
             else
@@ -144,6 +147,9 @@ public class MelodiePlaying : MonoBehaviour {
         {
             CreateParticuleColored(partitionPlayed[i], parent.transform.GetChild(i).position, particleSound);
         }
+
+        indexToPlay = 0;
+        partitionPlayed.Clear();
     }
 
     public void ReturnToMenu()
@@ -209,21 +215,23 @@ public class MelodiePlaying : MonoBehaviour {
 
     IEnumerator playMelody01()
     {
-        int i = 0;
         while (partitionFinish == false)
         {
-            if(i == partition01.Length)
+            if(indexToPlay == partition01.Length)
             {
-                i = 0;
+                indexToPlay = 0;
             }
-            CreateParticuleColored(partition01[i], positionToInstantiate.position,particleSound);
-            if(i == partition01.Length)
+            CreateParticuleColored(partition01[indexToPlay], positionToInstantiate.position,particleSound);
+            if(indexToPlay == partition01.Length)
             {
                 yield return new WaitForSeconds(waitingTime + waitingTime);
             }
             else
             {
-                i++;
+                //Si il a joué au moins la premiere note
+                if(partitionPlayed.Count != 0)
+                    indexToPlay++;
+
                 yield return new WaitForSeconds(waitingTime);
             }
         }
@@ -231,21 +239,22 @@ public class MelodiePlaying : MonoBehaviour {
 
     IEnumerator playMelody02()
     {
-        int i = 0;
         while (partitionFinish == false)
         {
-            if (i == partition02.Length)
+            if (indexToPlay == partition02.Length)
             {
-                i = 0;
+                indexToPlay = 0;
             }
-            CreateParticuleColored(partition02[i], positionToInstantiate.position, particleSound);
-            if (i == partition02.Length)
+            CreateParticuleColored(partition02[indexToPlay], positionToInstantiate.position, particleSound);
+            if (indexToPlay == partition02.Length)
             {
                 yield return new WaitForSeconds(waitingTime + waitingTime);
             }
             else
             {
-                i++;
+                //Si il a joué au moins la premiere note
+                if (partitionPlayed.Count != 0)
+                    indexToPlay++;
                 yield return new WaitForSeconds(waitingTime);
             }
         }
