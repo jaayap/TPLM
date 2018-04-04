@@ -718,7 +718,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
   cloudProjectId: cf51269c-fc9c-46a6-bb4f-54fa7334f218
-  projectName: 
+  projectName: GameJamLV2018
   organizationId: farron972
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
