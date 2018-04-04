@@ -7,55 +7,71 @@ public class RaycastCamera : MonoBehaviour {
     public GameObject cubeRed;
     public GameObject cubeGreen;
     public GameObject cubeBlue;
+    
+    public AudioSource ambiantSound;
+
+    public float focusVolume = 1f;
+    public float unfocusVolume = 0.5f;
+
 
     // Update is called once per frame
     void Update () {
 
         RaycastHit hit;
         Debug.DrawRay(transform.position, transform.forward * 100);
-        if (Physics.Raycast(transform.position, transform.forward, out hit))
+        if (Physics.SphereCast(transform.position, 0.02f,transform.forward, out hit))
         {
             
             if(hit.collider.name == "CubeRed")
             {
-                if (!cubeRed.GetComponent<AudioSource>().isPlaying)
-                    cubeRed.GetComponent<AudioSource>().Play();
+                cubeRed.GetComponent<AudioSource>().volume = focusVolume;
+                
 
-                cubeGreen.GetComponent<AudioSource>().Stop();
-                cubeBlue.GetComponent<AudioSource>().Stop();
+                cubeGreen.GetComponent<AudioSource>().volume = unfocusVolume;
+                cubeBlue.GetComponent<AudioSource>().volume = unfocusVolume;
+
+                ambiantSound.volume = 0.3f;
             }
 
             else if (hit.collider.name == "CubeGreen")
             {
-                cubeRed.GetComponent<AudioSource>().Stop();
+                cubeRed.GetComponent<AudioSource>().volume = unfocusVolume;
 
-                if (!cubeGreen.GetComponent<AudioSource>().isPlaying)
-                    cubeGreen.GetComponent<AudioSource>().Play();
+                
+                cubeGreen.GetComponent<AudioSource>().volume = focusVolume;
+                
 
-                cubeBlue.GetComponent<AudioSource>().Stop();
+                cubeBlue.GetComponent<AudioSource>().volume = unfocusVolume;
+
+                ambiantSound.volume = 0.3f;
             }
 
             else if (hit.collider.name == "CubeBlue")
             {
-                cubeRed.GetComponent<AudioSource>().Stop();
-                cubeGreen.GetComponent<AudioSource>().Stop();
+                cubeRed.GetComponent<AudioSource>().volume = unfocusVolume;
+                cubeGreen.GetComponent<AudioSource>().volume = unfocusVolume;
 
-                if (!cubeBlue.GetComponent<AudioSource>().isPlaying)
-                    cubeBlue.GetComponent<AudioSource>().Play();
+                cubeBlue.GetComponent<AudioSource>().volume = focusVolume;
+
+                ambiantSound.volume = 0.3f;
             }
 
             else
             {
-                cubeRed.GetComponent<AudioSource>().Stop();
-                cubeGreen.GetComponent<AudioSource>().Stop();
-                cubeBlue.GetComponent<AudioSource>().Stop();
+                cubeRed.GetComponent<AudioSource>().volume = unfocusVolume;
+                cubeGreen.GetComponent<AudioSource>().volume = unfocusVolume;
+                cubeBlue.GetComponent<AudioSource>().volume = unfocusVolume;
+
+                ambiantSound.volume = 1f;
             }
         }
         else
         {
-            cubeRed.GetComponent<AudioSource>().Stop();
-            cubeGreen.GetComponent<AudioSource>().Stop();
-            cubeBlue.GetComponent<AudioSource>().Stop();
+            cubeRed.GetComponent<AudioSource>().volume = unfocusVolume;
+            cubeGreen.GetComponent<AudioSource>().volume = unfocusVolume;
+            cubeBlue.GetComponent<AudioSource>().volume = unfocusVolume;
+
+            ambiantSound.volume = 1f;
         }
 
     }
