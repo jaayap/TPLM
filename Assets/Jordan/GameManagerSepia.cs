@@ -5,15 +5,12 @@ using UnityEngine.UI;
 
 public class GameManagerSepia : MonoBehaviour {
 
-
     public enum State
     {
         unAugmented,
         augmented,
         endGame
-
     }
-
 
     public State state;
 
@@ -26,12 +23,12 @@ public class GameManagerSepia : MonoBehaviour {
     public bool green = false;
     public bool blue = false;
 
+    private bool isActive = false;
+
     // Use this for initialization
     void Start () {
-
         state = State.unAugmented;
         StartCoroutine(StartTuto());
-
 	}
 	
 	// Update is called once per frame
@@ -43,9 +40,13 @@ public class GameManagerSepia : MonoBehaviour {
             
             // attendre les cubes
             //Passer  l'étape suivante
-            if(red == true && green == true && blue == true)
+            if(red == true && green == true && blue == true && isActive == false)
             {
-                tutoText.text = "Vous avez mis chaque cube dans un emplacement mais vous n'avez aucun moyen d'être sûr de vos choix. Nous allons procédé a quelques modifications pour vous aider.";
+                isActive = true;
+                tutoText.text = "You grab cubes in different locations but you could not be sure of your choices.";
+                tutoText.text += " We will make some changes to help you ";
+                //"Vous avez mis chaque cube dans un emplacement mais vous n'aviez aucun moyen d'être
+                //sûr de vos choix. Nous allons procédé a quelques modifications pour vous aider.";
                 Invoke("ChangeStateToAugmented", 10f);
             }
         }
@@ -53,17 +54,18 @@ public class GameManagerSepia : MonoBehaviour {
         else if(state == State.augmented)
         {
 
-            tutoText.text = "Nous avons modifié votre ouïes. Maintenant vous pouvez entendre les couleurs. Le bleu correspond au son de l'eau, le vert à celui des feuilles et le rouge à celui du feu.";
-            if (red == true && green == true && blue == true)
+            tutoText.text = "We have modified your hearing. Now, you can hear colors. Blue correspond to the sound of water, Green to the sound of tree and Red, the sound of fire";
+            //"Nous avons modifié votre ouïe. Maintenant vous pouvez entendre les couleurs. Le bleu correspond au son de l'eau, le vert à celui des feuilles et le rouge à celui du feu.";
+            if (red == true && green == true && blue == true && isActive == false)
             {
+                isActive = true;
                 Invoke("ChangeStateToEndGame", 3f);
             }
         }
 
         else if(state == State.endGame)
         {
-            
-            tutoText.text = "Félicitation! \n Vous avez réussi l'exercice!";
+            tutoText.text = "Congratulation ! \n You have successfully completed the exercise !";// "Félicitation! \n Vous avez réussi l'exercice!";
         }
 
 
@@ -87,6 +89,7 @@ public class GameManagerSepia : MonoBehaviour {
         red = false;
         green = false;
         blue = false;
+        isActive = false;
     }
 
     void ChangeStateToEndGame()
@@ -100,10 +103,11 @@ public class GameManagerSepia : MonoBehaviour {
 
         yield return new WaitForSeconds(1f);
 
-        tutoText.text = "Bonjour";
+        tutoText.text = "Good morning !";//"Bonjour";
         
         yield return new WaitForSeconds(5f);
 
-        tutoText.text = "Vous êtes dans la peau d'un daltonien. Vous devez mettre chaque cube dans l'emplacement correspondant a sa couleur.";
+        tutoText.text = "You are in the shoes of a color-blind. You have to place each cube in each matching location";
+            //"Vous êtes dans la peau d'un daltonien. Vous devez mettre chaque cube dans l'emplacement correspondant a sa couleur.";
     }
 }

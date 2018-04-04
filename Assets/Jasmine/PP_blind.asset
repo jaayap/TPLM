@@ -301,8 +301,8 @@ MonoBehaviour:
       intensity: 0.45
       smoothness: 0.2
       roundness: 1
-      mask: {fileID: 0}
-      opacity: 1
+      mask: {fileID: 2800000, guid: 105e520efa878f14e966b9900e8f5a08, type: 3}
+      opacity: 0
       rounded: 0
   dithering:
     m_Enabled: 0

@@ -31,7 +31,7 @@ public class TakeObject : MonoBehaviour {
           }
           if (device.GetPressUp(SteamVR_Controller.ButtonMask.Trigger))
           {
-              col.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+              col.gameObject.GetComponent<Rigidbody>().isKinematic = true;
               col.gameObject.transform.SetParent(null);              
           }
       }
