@@ -22,6 +22,8 @@ public class TeleportMyo : MonoBehaviour {
 
             if (thalmicMyo.pose != _lastPose)
             {
+                _lastPose = thalmicMyo.pose;
+
                 if (thalmicMyo.pose == Pose.Fist)
                 {
                     thalmicMyo.Vibrate(VibrationType.Medium);

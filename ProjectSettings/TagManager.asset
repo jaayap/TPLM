@@ -8,6 +8,7 @@ TagManager:
   - projectile
   - SepiaCube
   - Hand
+  - Ground
   layers:
   - Default
   - TransparentFX
