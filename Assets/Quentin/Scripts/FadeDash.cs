@@ -5,7 +5,7 @@ using UnityEngine.PostProcessing;
 
 public class FadeDash : MonoBehaviour {
 
-     public float dashTime = 0.05f;
+    public float dashTime = 0.1f;
     public PostProcessingProfile ppProfile;
 
     private bool isFadingDashIn = false;
