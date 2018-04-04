@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 7b621f3d20f81af4785f8576da7910e2, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.098958574, g: 0.16722803, b: 0.3000045, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -113,7 +113,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!43 &663916233
+--- !u!1001 &74609094
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4545529332145854, guid: 0f875b939accc924698e4f4d175146f8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.6261607
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545529332145854, guid: 0f875b939accc924698e4f4d175146f8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.2287011
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545529332145854, guid: 0f875b939accc924698e4f4d175146f8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.28439903
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545529332145854, guid: 0f875b939accc924698e4f4d175146f8, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545529332145854, guid: 0f875b939accc924698e4f4d175146f8, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545529332145854, guid: 0f875b939accc924698e4f4d175146f8, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545529332145854, guid: 0f875b939accc924698e4f4d175146f8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545529332145854, guid: 0f875b939accc924698e4f4d175146f8, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 33260728269204092, guid: 0f875b939accc924698e4f4d175146f8,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 227049579}
+    - target: {fileID: 23942010058565022, guid: 0f875b939accc924698e4f4d175146f8,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 1722349559}
+    - target: {fileID: 4959041671386534, guid: 0f875b939accc924698e4f4d175146f8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5.37
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0f875b939accc924698e4f4d175146f8, type: 2}
+  m_IsPrefabParent: 0
+--- !u!43 &227049579
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -243,71 +299,7 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
---- !u!1001 &709221578
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4545529332145854, guid: 0f875b939accc924698e4f4d175146f8, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.6261607
-      objectReference: {fileID: 0}
-    - target: {fileID: 4545529332145854, guid: 0f875b939accc924698e4f4d175146f8, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.2287011
-      objectReference: {fileID: 0}
-    - target: {fileID: 4545529332145854, guid: 0f875b939accc924698e4f4d175146f8, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0.28439903
-      objectReference: {fileID: 0}
-    - target: {fileID: 4545529332145854, guid: 0f875b939accc924698e4f4d175146f8, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4545529332145854, guid: 0f875b939accc924698e4f4d175146f8, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4545529332145854, guid: 0f875b939accc924698e4f4d175146f8, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4545529332145854, guid: 0f875b939accc924698e4f4d175146f8, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4545529332145854, guid: 0f875b939accc924698e4f4d175146f8, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 33260728269204092, guid: 0f875b939accc924698e4f4d175146f8,
-        type: 2}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 663916233}
-    - target: {fileID: 23942010058565022, guid: 0f875b939accc924698e4f4d175146f8,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 1171843326}
-    - target: {fileID: 1412019518355258, guid: 0f875b939accc924698e4f4d175146f8, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1766278030488632, guid: 0f875b939accc924698e4f4d175146f8, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1588433116701216, guid: 0f875b939accc924698e4f4d175146f8, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 0f875b939accc924698e4f4d175146f8, type: 2}
-  m_IsPrefabParent: 0
---- !u!21 &1171843326
+--- !u!21 &1722349559
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
