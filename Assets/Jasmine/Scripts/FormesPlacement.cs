@@ -5,7 +5,7 @@ using UnityEngine;
 public class FormesPlacement : MonoBehaviour {
 
     public static int nbForme = 0;
-
+    public AudioSource audioEnd;
 	// Use this for initialization
 	void Start () {
 		
@@ -15,6 +15,7 @@ public class FormesPlacement : MonoBehaviour {
 	void Update () {
         if(nbForme == 5)
         {
+            audioEnd.Play();
             Debug.Log("reussi");
         }
 	}
