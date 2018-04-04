@@ -52,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1351227962329344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.857}
+  m_LocalPosition: {x: -0.94, y: 0, z: -0.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4678235378173474}
@@ -65,8 +65,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1030329966282862}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.051, y: 0.1482609, z: 3.131}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.787, y: 1.214, z: -0.691}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4669438387283250}
   m_Father: {fileID: 0}
@@ -144,15 +144,18 @@ MonoBehaviour:
   - {r: 0.6965513, g: 0, b: 1, a: 1}
   partition02:
   - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 1, g: 0.47586197, b: 0, a: 1}
+  - {r: 0, g: 1, b: 0.048275925, a: 1}
   - {r: 0, g: 1, b: 1, a: 1}
   - {r: 0.034482475, g: 0, b: 1, a: 1}
   - {r: 0.6965513, g: 0, b: 1, a: 1}
   partitionFinish: 0
   waitingTime: 5
-  particleSound: {fileID: 1834991987938860, guid: f6a1f228983f0f440ac44335066c0474,
+  particleSoundRadio: {fileID: 1258390964867628, guid: b80def1a4073b02459878480e525d010,
+    type: 2}
+  particleSoundMelody: {fileID: 1301715779643804, guid: 78a83fe52589fca4a98a6e845fe89a25,
     type: 2}
   particleTreeSound: {fileID: 1764093559512078, guid: fe63875b027e61f4da5851ea3ab31c4d,
     type: 2}
   positionToInstantiate: {fileID: 4669438387283250}
   nbPartitionToPlay: 1
+  indexToPlay: 0

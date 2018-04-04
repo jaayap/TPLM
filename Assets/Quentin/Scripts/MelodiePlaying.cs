@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MelodiePlaying : MonoBehaviour {
 
@@ -11,7 +12,8 @@ public class MelodiePlaying : MonoBehaviour {
 
     public bool partitionFinish = false;
     public float waitingTime = 5;
-    public GameObject particleSound;
+    public GameObject particleSoundRadio;
+    public GameObject particleSoundMelody;
     public GameObject particleTreeSound;
 
     public Transform positionToInstantiate;
@@ -40,10 +42,13 @@ public class MelodiePlaying : MonoBehaviour {
                 CreateParticuleColored(Color.white, hitPosition,particleTreeSound);
                 indexToPlay = 0;
                 partitionPlayed.Clear();
+                StopAllCoroutines();
+                StartCoroutine("playMelody01", (waitingTime));
             }
             else
             {
                 CreateParticuleColored(colorPlayed, hitPosition, particleTreeSound);
+                indexToPlay++;
             }
 
             if (partitionPlayed.Count == partition01.Length)
@@ -52,7 +57,7 @@ public class MelodiePlaying : MonoBehaviour {
                 StopAllCoroutines();
                 partitionFinish = false;
                 nbPartitionToPlay++;
-                Invoke("DisplayMelody", waitingTime);
+                Invoke("DisplayMelody", waitingTime/4);
                 StartCoroutine("playMelody02", (waitingTime*4));
             }
         }
@@ -66,12 +71,15 @@ public class MelodiePlaying : MonoBehaviour {
             if (!isGood(colorPlayed, partition02[partitionPlayed.Count - 1]))
             {
                 CreateParticuleColored(Color.white, hitPosition, particleTreeSound);
+                StopAllCoroutines();
+                StartCoroutine("playMelody02", waitingTime);
                 indexToPlay = 0;
                 partitionPlayed.Clear();
             }
             else
             {
                 CreateParticuleColored(colorPlayed, hitPosition, particleTreeSound);
+                indexToPlay++;
             }
 
             if (partitionPlayed.Count == partition02.Length)
@@ -81,7 +89,7 @@ public class MelodiePlaying : MonoBehaviour {
                 partitionFinish = false;
                 nbPartitionToPlay++;
                 //StartCoroutine(playMelody03());
-                Invoke("DisplayMelody", waitingTime);
+                Invoke("DisplayMelody", waitingTime/4);
                 Invoke("ReturnToMenu",waitingTime*4);
             }
         }
@@ -99,7 +107,7 @@ public class MelodiePlaying : MonoBehaviour {
         //    }
         //    else
         //    {
-        //        CreateParticuleColored(Color.white, hitPosition, particleSound);
+        //        CreateParticuleColored(Color.white, hitPosition, particleSoundRadio);
         //    }
 
         //    if (partitionPlayed.Count == partition03.Length)
@@ -125,7 +133,7 @@ public class MelodiePlaying : MonoBehaviour {
         //    }
         //    else
         //    {
-        //        CreateParticuleColored(Color.white, hitPosition, particleSound);
+        //        CreateParticuleColored(Color.white, hitPosition, particleSoundRadio);
         //    }
 
         //    if (partitionPlayed.Count == partition04.Length)
@@ -145,7 +153,7 @@ public class MelodiePlaying : MonoBehaviour {
 
         for (int i = 0; i < partitionPlayed.Count; i++)
         {
-            CreateParticuleColored(partitionPlayed[i], parent.transform.GetChild(i).position, particleSound);
+            CreateParticuleColored(partitionPlayed[i], parent.transform.GetChild(i).position, particleSoundMelody);
         }
 
         indexToPlay = 0;
@@ -155,7 +163,8 @@ public class MelodiePlaying : MonoBehaviour {
     public void ReturnToMenu()
     {
         //LoadSceneMenu
-        Application.Quit();
+        SceneManager.LoadScene(0);
+        //Application.Quit();
     }
 
     bool isGood(Color colorPlayed, Color colorToPlay)
@@ -167,30 +176,30 @@ public class MelodiePlaying : MonoBehaviour {
             return false;
     }
 
-    private void Update()
-    {
-        if(partitionFinish == true)
-        {
-            StopAllCoroutines();
-            if(nbPartitionToPlay == 4)
-            {
-                return;
-            }
-            else
-            {
-                partitionFinish = false;
+    //private void Update()
+    //{
+    //    if(partitionFinish == true)
+    //    {
+    //        StopAllCoroutines();
+    //        if(nbPartitionToPlay == 4)
+    //        {
+    //            return;
+    //        }
+    //        else
+    //        {
+    //            partitionFinish = false;
 
-                nbPartitionToPlay++;
-                if(nbPartitionToPlay == 2)
-                    StartCoroutine(playMelody02());
-                //else if (nbPartitionToPlay == 3)
-                //    StartCoroutine(playMelody03());
-                //else if (nbPartitionToPlay == 4)
-                //    StartCoroutine(playMelody04());
+    //            nbPartitionToPlay++;
+    //            if(nbPartitionToPlay == 2)
+    //                StartCoroutine(playMelody02());
+    //            //else if (nbPartitionToPlay == 3)
+    //            //    StartCoroutine(playMelody03());
+    //            //else if (nbPartitionToPlay == 4)
+    //            //    StartCoroutine(playMelody04());
 
-            }
-        }
-    }
+    //        }
+    //    }
+    //}
 
     void CreateParticuleColored(Color color, Vector3 position, GameObject particle)
     {
@@ -221,7 +230,7 @@ public class MelodiePlaying : MonoBehaviour {
             {
                 indexToPlay = 0;
             }
-            CreateParticuleColored(partition01[indexToPlay], positionToInstantiate.position,particleSound);
+            CreateParticuleColored(partition01[indexToPlay], positionToInstantiate.position,particleSoundRadio);
             if(indexToPlay == partition01.Length)
             {
                 yield return new WaitForSeconds(waitingTime + waitingTime);
@@ -229,8 +238,8 @@ public class MelodiePlaying : MonoBehaviour {
             else
             {
                 //Si il a joué au moins la premiere note
-                if(partitionPlayed.Count != 0)
-                    indexToPlay++;
+                //if(partitionPlayed.Count != 0)
+                //    indexToPlay++;
 
                 yield return new WaitForSeconds(waitingTime);
             }
@@ -245,7 +254,7 @@ public class MelodiePlaying : MonoBehaviour {
             {
                 indexToPlay = 0;
             }
-            CreateParticuleColored(partition02[indexToPlay], positionToInstantiate.position, particleSound);
+            CreateParticuleColored(partition02[indexToPlay], positionToInstantiate.position, particleSoundRadio);
             if (indexToPlay == partition02.Length)
             {
                 yield return new WaitForSeconds(waitingTime + waitingTime);
@@ -253,8 +262,8 @@ public class MelodiePlaying : MonoBehaviour {
             else
             {
                 //Si il a joué au moins la premiere note
-                if (partitionPlayed.Count != 0)
-                    indexToPlay++;
+                //if (partitionPlayed.Count != 0)
+                //    indexToPlay++;
                 yield return new WaitForSeconds(waitingTime);
             }
         }
@@ -269,7 +278,7 @@ public class MelodiePlaying : MonoBehaviour {
     //        {
     //            i = 0;
     //        }
-    //        CreateParticuleColored(partition03[i], positionToInstantiate.position, particleSound);
+    //        CreateParticuleColored(partition03[i], positionToInstantiate.position, particleSoundRadio);
     //        if (i == partition03.Length)
     //        {
     //            yield return new WaitForSeconds(waitingTime + waitingTime);
@@ -291,7 +300,7 @@ public class MelodiePlaying : MonoBehaviour {
     //        {
     //            i = 0;
     //        }
-    //        CreateParticuleColored(partition03[i], positionToInstantiate.position, particleSound);
+    //        CreateParticuleColored(partition03[i], positionToInstantiate.position, particleSoundRadio);
     //        if (i == partition04.Length)
     //        {
     //            yield return new WaitForSeconds(waitingTime + waitingTime);
